@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>第 06 章｜租金補貼</title>
+<style>
+:root{--bg:#FBF6EE;--card:#FFFFFF;--accent:#E8833A;--accent-soft:#FCE6D4;--text:#3B2F2A;--muted:#7A6A60;--line:#EADFD2;--green:#3E7C59;--green-soft:#E3F1E8;--yellow-soft:#FFF4D6}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#EFE6D8;color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
+.viewport{position:fixed;inset:0 0 64px 0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.stage{width:1280px;height:720px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;background:var(--bg);border-radius:28px;box-shadow:0 12px 40px rgba(59,47,42,.18);padding:48px 64px 84px;display:none;flex-direction:column;overflow:hidden}
+.slide.active{display:flex}
+.slide .body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:18px}
+.kicker{font-size:18px;color:var(--accent);font-weight:700;letter-spacing:.05em}
+h1{font-size:46px;line-height:1.25;font-weight:800}
+h2{font-size:38px;line-height:1.3;font-weight:800;margin-bottom:6px}
+h2 .emo{margin-right:12px}
+.plain{background:var(--accent-soft);border-radius:18px;padding:14px 22px;font-size:22px;line-height:1.55}
+.plain b{color:var(--accent);margin-right:8px}
+ul.points,ol.points{font-size:23px;line-height:1.55;padding-left:30px;display:flex;flex-direction:column;gap:6px}
+ul.points li::marker{color:var(--accent)}
+ol.points li::marker{color:var(--accent);font-weight:800}
+strong{color:#B4561A}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.col{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:16px 22px}
+.col h3{font-size:21px;color:var(--accent);margin-bottom:8px}
+.col ul{font-size:20px;line-height:1.5;padding-left:24px}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:21px;background:var(--card);border-radius:18px;overflow:hidden;border:2px solid var(--line)}
+th,td{padding:12px 18px;text-align:left;border-bottom:1px solid var(--line);line-height:1.45}
+th{background:var(--accent);color:#fff;font-weight:700}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:700;color:var(--muted);width:150px}
+.quote{background:var(--card);border-left:8px solid var(--accent);border-radius:14px;padding:14px 22px;font-size:20px;line-height:1.6}
+.quote .label{font-size:15px;font-weight:700;color:var(--accent);display:block;margin-bottom:2px}
+.quote .ref{color:var(--muted);font-size:16px;margin-left:6px}
+.calc{background:var(--green-soft);border-radius:14px;padding:12px 20px;font-size:20px;line-height:1.5}
+.calc .label{font-weight:800;color:var(--green);margin-right:8px}
+.todo{background:var(--yellow-soft);border:2px dashed #E3B341;border-radius:14px;padding:10px 18px;font-size:18px}
+.scenario{background:var(--card);border:3px solid var(--accent);border-radius:24px;padding:20px 28px;display:flex;flex-direction:column;gap:12px}
+.scenario .story{font-size:22px;background:var(--accent-soft);border-radius:14px;padding:12px 18px}
+.scenario .story b{color:var(--accent);margin-right:10px}
+.tag-scn{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:4px 14px;font-size:16px;font-weight:700;margin-bottom:6px}
+.cover{justify-content:center}
+.cover .body{justify-content:center;gap:26px}
+.cover .big{font-size:84px}
+.goals{background:var(--card);border-radius:22px;padding:20px 30px;border:2px solid var(--line)}
+.goals h3{font-size:20px;color:var(--accent);margin-bottom:8px}
+.goals ul{font-size:23px;line-height:1.6;padding-left:28px}
+.recap ol{font-size:26px;line-height:1.6;padding-left:34px}
+.points.compact{font-size:20px;gap:2px}.recap.compact{padding:12px 26px}.recap.compact ol{font-size:20px;line-height:1.5}.recap.compact h3{margin-bottom:2px}
+footer.src{position:absolute;left:64px;right:180px;bottom:26px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
+footer.src .pill{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--text)}
+.pageno{position:absolute;right:64px;bottom:26px;font-size:16px;color:var(--muted);font-weight:700}
+.nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;z-index:5}
+.nav button,.nav a{background:var(--text);color:#fff;border:none;border-radius:999px;padding:8px 18px;font-size:15px;cursor:pointer;text-decoration:none;font-family:inherit}
+.nav button:disabled{opacity:.35;cursor:default}
+.progress{position:fixed;top:0;left:0;height:5px;background:var(--accent);transition:width .25s;z-index:5}
+.disclaimer{font-size:15px;color:var(--muted)}
+</style></head><body><div class="progress"></div>
+<div class="viewport"><div class="stage"><section class='slide cover' data-n='1'><div class='body'><div class='kicker'>第 06 章</div><div class='big'>🧾</div><h1>租屋也可以申請補貼</h1><div class='goals'><h3>🎯 這一章你會學到</h3><ul><li>租金補貼是什麼、誰可以申請</li><li>單身、無弱勢身分的大學生大概可以補多少</li><li>房屋和租約要符合哪些條件</li><li>領補貼期間租約有變動怎麼辦</li></ul></div></div><footer class='src'><span>📚 出處：</span><span class="pill">租金補貼是什麼</span><span class="pill">申請補貼的房屋與租約條件</span><span class="pill">領補貼期間租約有變動</span></footer><div class='pageno'>1 / 8</div></section><section class='slide' data-n='2'><div class='body'><h2><span class=emo>🙋</span>租金補貼是什麼？誰可以申請？</h2><div class='plain'><b>白話</b>政府依你實際付的房租，每月補貼一部分；申請人要在國內設有戶籍、原則上已成年，家庭成員都沒有自有房屋，而且平均每人每月所得低於門檻。</div><ul class='points'><li><strong>單身青年</strong>：成年未達 40 歲的單身者</li><li><strong>家庭成員</strong>：申請人、配偶、申請人或配偶的未成年子女、受申請人或配偶監護的人</li><li>家庭成員<strong>均無自有房屋</strong></li><li>平均每人每月所得低於最低生活費 <strong>3 倍</strong>（例如臺北市低於 62,232 元）</li></ul><div class='quote'><span class='label'>📜 原文</span>「單身青年：指成年未達四十歲單身者。」<span class='ref'>（作業規定 第二點）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">租金補貼是什麼</span></footer><div class='pageno'>2 / 8</div></section><section class='slide' data-n='3'><div class='body'><h2><span class=emo>💵</span>單身、無弱勢身分的大學生大概可以補多少？</h2><ul class='points'><li>以<strong>實際租金</strong>核計，每月有補貼上限</li><li>補貼分三級；<strong>第三級</strong>：家庭成員一人、未滿 40 歲、不具經濟或社會弱勢身分</li><li>第三級每月上限，例如：<strong>臺北市 3,000 元</strong>；桃園市、新竹縣市 2,400 元</li><li><strong>單身青年</strong>：補貼上限乘以 <strong>1.2 倍</strong>；同時符合多種加碼身分時擇高</li><li>有經濟或社會弱勢身分者，級距不同（見附表五）</li></ul><div class='quote'><span class='label'>📜 原文</span>「補貼金額上限所乘倍數一點二倍」<span class='ref'>（116 年度附表六，單身青年欄）</span></div><div class='calc'><span class='label'>🧮 試算示例</span>單身、在臺北租屋、屬第三級 → 3,000 元 × 1.2 倍 = 每月補貼上限 3,600 元（仍以實際租金核計）。</div></div><footer class='src'><span>📚 出處：</span><span class="pill">租金補貼是什麼</span></footer><div class='pageno'>3 / 8</div></section><section class='slide' data-n='4'><div class='body'><h2><span class=emo>🏢</span>房子要符合什麼？</h2><ul class='points'><li>具<strong>房屋稅籍</strong>，且已保存登記或取得建築物合法證明文件</li><li>按<strong>住家用稅率</strong>課房屋稅，或建物登記用途含住宅、套房、宿舍等</li><li>不得為社會住宅、政府興辦的出租住宅（有例外）、24 小時照顧機構</li><li><strong>同一地址的申請戶數</strong>有上限：房屋稅籍總面積 ÷ 6.88 平方公尺的整數；分租套房、雅房要留意</li></ul><div class='quote'><span class='label'>📜 原文</span>「以同一租賃地址申請補貼者，申請戶數未超過以房屋稅籍總面積除以六點八八平方公尺所得之整數」<span class='ref'>（作業規定 第五點）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">申請補貼的房屋與租約條件</span><span class="pill">租屋型態</span></footer><div class='pageno'>4 / 8</div></section><section class='slide' data-n='5'><div class='body'><h2><span class=emo>📝</span>租約要符合什麼？</h2><ul class='points'><li>承租人必須是<strong>申請人本人</strong>，而且是<strong>實際居住</strong>的人</li><li>出租人或房屋所有權人<strong>不能是家庭成員或直系親屬</strong>（例如父母）</li><li>每月租金不超過上限（臺北市 55,000 元；新北、桃園、臺中、新竹縣市 45,000 元；臺南、高雄 40,000 元；其餘 39,000 元）</li><li><strong>定期</strong>租約，申請時<strong>已起租或於申請日起 60 日內起租</strong>，起租日不得超過計畫年度；寫明出租人與承租人姓名、承租人身分證號、地址（含樓層、室別）、租金、租期</li><li>契約如寫明用途，要<strong>包含居住使用</strong>；契約<strong>不得記載</strong>「承租人不得申請租金補貼」</li></ul><div class='quote'><span class='label'>📜 原文</span>「租賃契約之出租人或租賃房屋所有權人不得為承租人之家庭成員或直系親屬。」<span class='ref'>（作業規定 第五點）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">申請補貼的房屋與租約條件</span><span class="pill">不得記載事項</span></footer><div class='pageno'>5 / 8</div></section><section class='slide' data-n='6'><div class='body'><div><span class='tag-scn'>🗂 情境卡</span><h2>大學生想申請租金補貼</h2></div><div class='scenario'><div class='story'><b>情境</b>20 歲的小晴在臺北念書，自己在外租套房，月租 12,000 元，想申請租金補貼。</div><ol class='points'><li><strong>房子</strong>：有房屋稅籍、合法登記，按住家用稅率課稅或登記用途含住宅、套房、宿舍等</li><li><strong>租約</strong>：承租人寫自己、是實際居住的人；簽<strong>定期</strong>租約，必要資料寫齊</li><li><strong>房東</strong>：出租人或房屋所有權人不能是家庭成員或直系親屬（例如父母）</li><li><strong>租金</strong>不超過上限；契約不能寫「不得申請租金補貼」</li><li>申請時要填<strong>租屋型態</strong>：分清楚是獨立套房還是分租套房</li></ol></div><div class='disclaimer'>＊實際以主管機關最新公告為準。</div></div><footer class='src'><span>📚 出處：</span><span class="pill">大學生想申請租金補貼</span><span class="pill">租屋型態</span></footer><div class='pageno'>6 / 8</div></section><section class='slide' data-n='7'><div class='body'><h2><span class=emo>🔄</span>領補貼期間，租約有變動</h2><ul class='points'><li><strong>租約結束後再租房</strong>：租約消滅後 <strong>3 個月</strong>內，檢附新租約，審核合格後續撥</li><li><strong>搬到其他縣市</strong>：自原租約消滅次日起 <strong>3 個月</strong>內，向遷入地申請遷移</li><li><strong>房東過世</strong>：自出租人死亡之日起 <strong>6 個月</strong>內檢附新租約</li><li>房東提出租約已結束或將提前結束的證明時，補貼可能先<strong>暫停撥款</strong></li><li>租約結束後<strong>沒有再租房</strong>、出租人或房屋所有權人是家庭成員或直系親屬、資料虛偽不實等 → <strong>停止補貼並追繳</strong>溢領金額</li></ul><div class='quote'><span class='label'>📜 原文</span>「租金補貼期間屆滿前，租賃契約消滅，未再租賃房屋。」<span class='ref'>（作業規定 第十三點（停止補貼情形之一））</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">領補貼期間租約有變動</span></footer><div class='pageno'>7 / 8</div></section><section class='slide' data-n='8'><div class='body'><h2><span class='emo'>📝</span>第 06 章回顧</h2><div class='goals recap'><h3>本章重點</h3><ol><li>補貼依<strong>實際租金</strong>核計；單身青年的補貼上限可乘 <strong>1.2 倍</strong>（例：臺北第三級 3,000 元的上限乘以 1.2）</li><li>房子要有稅籍、<strong>合法登記</strong>，按<strong>住家用稅率</strong>課稅或登記用途含住宅等；租約承租人是<strong>實際居住的本人</strong>，出租人或所有權人不能是<strong>家庭成員或直系親屬</strong></li><li>租約有變動，要在期限內<strong>補新約或申請遷移</strong>，否則停止補貼並追繳</li></ol></div><div class='disclaimer'>＊本簡報僅供學習，實際以主管機關最新公告為準。</div></div><footer class='src'><span>📚 出處：</span><span class="pill">租金補貼是什麼</span><span class="pill">申請補貼的房屋與租約條件</span><span class="pill">領補貼期間租約有變動</span></footer><div class='pageno'>8 / 8</div></section></div></div>
+<div class="nav"><a href="index.html">🏠 目錄</a><button id="prev">← 上一頁</button><button id="next">下一頁 →</button></div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];let i=0;
+const prev=document.getElementById('prev'),next=document.getElementById('next'),bar=document.querySelector('.progress');
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+ prev.disabled=i===0;next.disabled=i===slides.length-1;bar.style.width=((i+1)/slides.length*100)+'%';history.replaceState(null,'','#'+(i+1));}
+function fit(){const s=Math.min((innerWidth-24)/1280,(innerHeight-88)/720);document.querySelector('.stage').style.transform='scale('+s+')';}
+prev.onclick=()=>show(i-1);next.onclick=()=>show(i+1);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1)}});
+addEventListener('resize',fit);fit();show((parseInt(location.hash.slice(1))||1)-1);
+</script></body></html>

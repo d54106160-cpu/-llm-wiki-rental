@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>第 04 章｜提前解約與轉租</title>
+<style>
+:root{--bg:#FBF6EE;--card:#FFFFFF;--accent:#E8833A;--accent-soft:#FCE6D4;--text:#3B2F2A;--muted:#7A6A60;--line:#EADFD2;--green:#3E7C59;--green-soft:#E3F1E8;--yellow-soft:#FFF4D6}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#EFE6D8;color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
+.viewport{position:fixed;inset:0 0 64px 0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.stage{width:1280px;height:720px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;background:var(--bg);border-radius:28px;box-shadow:0 12px 40px rgba(59,47,42,.18);padding:48px 64px 84px;display:none;flex-direction:column;overflow:hidden}
+.slide.active{display:flex}
+.slide .body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:18px}
+.kicker{font-size:18px;color:var(--accent);font-weight:700;letter-spacing:.05em}
+h1{font-size:46px;line-height:1.25;font-weight:800}
+h2{font-size:38px;line-height:1.3;font-weight:800;margin-bottom:6px}
+h2 .emo{margin-right:12px}
+.plain{background:var(--accent-soft);border-radius:18px;padding:14px 22px;font-size:22px;line-height:1.55}
+.plain b{color:var(--accent);margin-right:8px}
+ul.points,ol.points{font-size:23px;line-height:1.55;padding-left:30px;display:flex;flex-direction:column;gap:6px}
+ul.points li::marker{color:var(--accent)}
+ol.points li::marker{color:var(--accent);font-weight:800}
+strong{color:#B4561A}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.col{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:16px 22px}
+.col h3{font-size:21px;color:var(--accent);margin-bottom:8px}
+.col ul{font-size:20px;line-height:1.5;padding-left:24px}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:21px;background:var(--card);border-radius:18px;overflow:hidden;border:2px solid var(--line)}
+th,td{padding:12px 18px;text-align:left;border-bottom:1px solid var(--line);line-height:1.45}
+th{background:var(--accent);color:#fff;font-weight:700}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:700;color:var(--muted);width:150px}
+.quote{background:var(--card);border-left:8px solid var(--accent);border-radius:14px;padding:14px 22px;font-size:20px;line-height:1.6}
+.quote .label{font-size:15px;font-weight:700;color:var(--accent);display:block;margin-bottom:2px}
+.quote .ref{color:var(--muted);font-size:16px;margin-left:6px}
+.calc{background:var(--green-soft);border-radius:14px;padding:12px 20px;font-size:20px;line-height:1.5}
+.calc .label{font-weight:800;color:var(--green);margin-right:8px}
+.todo{background:var(--yellow-soft);border:2px dashed #E3B341;border-radius:14px;padding:10px 18px;font-size:18px}
+.scenario{background:var(--card);border:3px solid var(--accent);border-radius:24px;padding:20px 28px;display:flex;flex-direction:column;gap:12px}
+.scenario .story{font-size:22px;background:var(--accent-soft);border-radius:14px;padding:12px 18px}
+.scenario .story b{color:var(--accent);margin-right:10px}
+.tag-scn{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:4px 14px;font-size:16px;font-weight:700;margin-bottom:6px}
+.cover{justify-content:center}
+.cover .body{justify-content:center;gap:26px}
+.cover .big{font-size:84px}
+.goals{background:var(--card);border-radius:22px;padding:20px 30px;border:2px solid var(--line)}
+.goals h3{font-size:20px;color:var(--accent);margin-bottom:8px}
+.goals ul{font-size:23px;line-height:1.6;padding-left:28px}
+.recap ol{font-size:26px;line-height:1.6;padding-left:34px}
+.points.compact{font-size:20px;gap:2px}.recap.compact{padding:12px 26px}.recap.compact ol{font-size:20px;line-height:1.5}.recap.compact h3{margin-bottom:2px}
+footer.src{position:absolute;left:64px;right:180px;bottom:26px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
+footer.src .pill{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--text)}
+.pageno{position:absolute;right:64px;bottom:26px;font-size:16px;color:var(--muted);font-weight:700}
+.nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;z-index:5}
+.nav button,.nav a{background:var(--text);color:#fff;border:none;border-radius:999px;padding:8px 18px;font-size:15px;cursor:pointer;text-decoration:none;font-family:inherit}
+.nav button:disabled{opacity:.35;cursor:default}
+.progress{position:fixed;top:0;left:0;height:5px;background:var(--accent);transition:width .25s;z-index:5}
+.disclaimer{font-size:15px;color:var(--muted)}
+</style></head><body><div class="progress"></div>
+<div class="viewport"><div class="stage"><section class='slide cover' data-n='1'><div class='body'><div class='kicker'>第 04 章</div><div class='big'>🚪</div><h1>租約還沒到期，可以走嗎？</h1><div class='goals'><h3>🎯 這一章你會學到</h3><ul><li>分辨「法定終止」和「任意終止」</li><li>房客、房東各自可以提前終止的情況</li><li>契約勾「得」或「不得」任意終止的差別</li><li>想轉租時要先做什麼</li></ul></div></div><footer class='src'><span>📚 出處：</span><span class="pill">提前終止租約</span><span class="pill">轉租</span></footer><div class='pageno'>1 / 8</div></section><section class='slide' data-n='2'><div class='body'><h2><span class=emo>⚖️</span>兩種提前解約</h2><table><tr><th></th><th>法定終止</th><th>任意終止</th></tr><tr><td>什麼情況</td><td>法律／契約規範列出的事由</td><td>非法定原因（例如只是想換地方住）</td></tr><tr><td>要看什麼</td><td>條例第 10、11 條；應記載事項 壹-十七、十八</td><td>契約勾選「得」或「不得」任意終止</td></tr><tr><td>要不要賠</td><td>不用賠償（對方不得要求賠償）</td><td>勾「得」：未先通知者，違約金最高 <strong>1 個月</strong>租金</td></tr><tr><td>通知期限</td><td><strong>30 日</strong>前書面通知（房東重建為 <strong>3 個月</strong>），並須檢附事證</td><td>勾「得」時：至少於終止前 <strong>1 個月</strong>通知</td></tr></table><ul class='points'><li><strong>例外</strong>：房客遇危及安全健康的瑕疵且情況危急；房東遇存放爆炸性、易燃性物品或裝修損害結構安全（契約規範 壹-十七），可以不先通知（見下兩頁）</li></ul></div><footer class='src'><span>📚 出處：</span><span class="pill">提前終止租約</span></footer><div class='pageno'>2 / 8</div></section><section class='slide' data-n='3'><div class='body'><h2><span class=emo>🙋</span>房客可以提前終止的情況</h2><ul class='points'><li>因疾病、意外產生<strong>長期療養</strong>的需要（範本注意事項十四(一)舉例：設立有案醫療機構出具療養需 6 個月以上的診斷證明）</li><li>房屋需修繕，經你定期限<strong>催告後仍未修繕</strong></li><li><strong>非你造成</strong>的原因使房屋部分滅失，剩下部分難以居住</li><li>第三人主張權利，使你<strong>無法居住</strong></li><li>房屋有危及安全或健康的<strong>瑕疵</strong>（應記載事項 壹-十八增列）：簽約時已知道或曾拋棄終止權也一樣可以終止；情況危急可不先期通知</li></ul><div class='quote'><span class='label'>📜 原文</span>「承租人依第一項各款或其繼承人依前項提前終止租賃契約者，應於終止前三十日，檢附相關事證，以書面通知出租人。」<span class='ref'>（條例第 11 條第 3 項）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">提前終止租約</span><span class="pill">租約還沒到期想搬走</span></footer><div class='pageno'>3 / 8</div></section><section class='slide' data-n='4'><div class='body'><h2><span class=emo>🏚️</span>房東可以提前終止的情況</h2><div class='plain'><b>白話</b>條例列 5 款，契約規範列得更細（10 款）；其中欠租、欠管理費、擅自變更用途等款，須先經<strong>催告</strong>或<strong>阻止</strong>。</div><div class='cols'><div class='col'><h3>條例第 10 條：重建前 3 個月、其他前 30 日書面通知</h3><ul><li>房客毀損房屋或附屬設備，不修繕也不賠償</li><li>遲付租金或費用達 <strong>2 個月</strong>租額，經催告仍拒繳</li><li>未經書面同意轉租</li><li>為重新建築而必要收回</li><li>其他依法律規定得提前終止</li></ul></div><div class='col'><h3>契約規範另加（壹-十七）：重建前 3 個月、其他前 30 日，均須檢附事證、書面通知</h3><ul><li>積欠管理費等費用達 2 個月租額，經催告仍不付</li><li>擅自變更用途、違法使用或存放爆炸性、易燃性物品、未經同意或未依法令室內裝修，<strong>經阻止仍繼續</strong></li><li>裝修損害原有建築結構安全</li></ul></div></div><ul class='points'><li><strong>通知期例外</strong>（壹-十七）：存放爆炸性、易燃性物品，以及損害結構安全這兩款，房東<strong>可以不先通知</strong></li></ul></div><footer class='src'><span>📚 出處：</span><span class="pill">提前終止租約</span></footer><div class='pageno'>4 / 8</div></section><section class='slide' data-n='5'><div class='body'><h2><span class=emo>🚚</span>只是想搬家？看「任意終止」</h2><div class='cols'><div class='col'><h3>契約勾「得」任意終止</h3><ul><li>至少於終止前 <strong>1 個月</strong>通知對方</li><li>沒有先通知就終止：違約金最高 <strong>1 個月</strong>租金，可由押金抵充</li><li>已預收的租金應返還</li></ul></div><div class='col'><h3>契約勾「不得」任意終止（範本注意事項十二(三)）</h3><ul><li>有法定終止情形時，<strong>仍得終止</strong></li><li>沒有法定終止情形時，違約金由雙方依契約自由原則<strong>自行約定</strong></li></ul></div></div><div class='quote'><span class='label'>📜 原文</span>「一方未為先期通知而逕行終止租約者，應賠償他方最高不得超過一個月租金額之違約金。」<span class='ref'>（應記載事項 壹-十四）</span></div><div class='calc'><span class='label'>🧮 試算示例</span>契約勾「得」任意終止、月租 6,000 元，沒先通知就搬 → 違約金最多 6,000 元。</div></div><footer class='src'><span>📚 出處：</span><span class="pill">提前終止租約</span><span class="pill">押金</span></footer><div class='pageno'>5 / 8</div></section><section class='slide' data-n='6'><div class='body'><h2><span class=emo>🔁</span>想轉租？先拿書面同意</h2><ul class='points'><li>須經房東<strong>書面同意</strong>（條例第 9 條）；<strong>沒有書面同意就轉租，房東可以提前終止租約</strong></li><li>房東同意時應出具<strong>同意書</strong>，載明範圍、期間及得終止契約的事由（應記載事項 壹-八）</li><li>轉租不得超過同意的範圍及期間；簽約後 <strong>30 日</strong>內書面通知房東，含次承租人姓名、通訊住址等（壹-十二）</li><li>民法規定房屋除有反對約定外可轉租一部分（民法第 443 條）；依使用者決定採「特別法優於普通法」，<strong>以條例為準</strong>：轉租一部分也要書面同意</li></ul><div class='quote'><span class='label'>📜 原文</span>「轉租人應經出租人書面同意，始得轉租其租用之住宅全部或一部。」<span class='ref'>（條例第 9 條第 1 項）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">轉租</span></footer><div class='pageno'>6 / 8</div></section><section class='slide' data-n='7'><div class='body'><div><span class='tag-scn'>🗂 情境卡</span><h2>住了半年，想搬走</h2></div><div class='scenario'><div class='story'><b>情境</b>小美租約一年，住了半年想搬走。</div><ol class='points'><li><strong>判斷一：屬於法定原因？</strong>（長期療養；房東經你定期限催告仍不修；非你造成的部分滅失且難以居住；第三人主張權利致無法居住；危及安全健康的瑕疵）→ 30 日前<strong>檢附事證</strong>、書面通知，房東不得要求賠償；有危及安全健康的瑕疵且情況危急時，可不先通知</li><li><strong>判斷二：只是想換地方住？</strong> → 看契約勾選；勾「得」要提前 1 個月通知，沒通知違約金最高 1 個月租金；勾「不得」：沒有法定原因時，違約金由雙方自行約定（範本注意事項十二(三)；注意事項此時未說明 1 個月上限）</li><li><strong>搬走前</strong>：共同點交、結算費用、遷出戶籍、帶走所有物品</li></ol></div><div class='disclaimer'>＊實際以主管機關最新公告為準。</div></div><footer class='src'><span>📚 出處：</span><span class="pill">租約還沒到期想搬走</span><span class="pill">提前終止租約</span><span class="pill">退租點交</span></footer><div class='pageno'>7 / 8</div></section><section class='slide' data-n='8'><div class='body'><h2><span class='emo'>📝</span>第 04 章回顧</h2><div class='goals recap'><h3>本章重點</h3><ol><li>法定原因 → 房客 <strong>30 日</strong>前檢附事證書面通知，不用賠（房屋有危及安全或健康的瑕疵且情況危急時，可不先通知）</li><li>非法定原因 → 看契約勾「得」或「不得」任意終止</li><li>轉租先拿房東<strong>書面同意</strong></li></ol></div><div class='disclaimer'>＊本簡報僅供學習，實際以主管機關最新公告為準。</div></div><footer class='src'><span>📚 出處：</span><span class="pill">提前終止租約</span><span class="pill">轉租</span></footer><div class='pageno'>8 / 8</div></section></div></div>
+<div class="nav"><a href="index.html">🏠 目錄</a><button id="prev">← 上一頁</button><button id="next">下一頁 →</button></div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];let i=0;
+const prev=document.getElementById('prev'),next=document.getElementById('next'),bar=document.querySelector('.progress');
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+ prev.disabled=i===0;next.disabled=i===slides.length-1;bar.style.width=((i+1)/slides.length*100)+'%';history.replaceState(null,'','#'+(i+1));}
+function fit(){const s=Math.min((innerWidth-24)/1280,(innerHeight-88)/720);document.querySelector('.stage').style.transform='scale('+s+')';}
+prev.onclick=()=>show(i-1);next.onclick=()=>show(i+1);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1)}});
+addEventListener('resize',fit);fit();show((parseInt(location.hash.slice(1))||1)-1);
+</script></body></html>

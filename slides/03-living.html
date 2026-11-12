@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>第 03 章｜住的期間：修繕與房客責任</title>
+<style>
+:root{--bg:#FBF6EE;--card:#FFFFFF;--accent:#E8833A;--accent-soft:#FCE6D4;--text:#3B2F2A;--muted:#7A6A60;--line:#EADFD2;--green:#3E7C59;--green-soft:#E3F1E8;--yellow-soft:#FFF4D6}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#EFE6D8;color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
+.viewport{position:fixed;inset:0 0 64px 0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.stage{width:1280px;height:720px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;background:var(--bg);border-radius:28px;box-shadow:0 12px 40px rgba(59,47,42,.18);padding:48px 64px 84px;display:none;flex-direction:column;overflow:hidden}
+.slide.active{display:flex}
+.slide .body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:18px}
+.kicker{font-size:18px;color:var(--accent);font-weight:700;letter-spacing:.05em}
+h1{font-size:46px;line-height:1.25;font-weight:800}
+h2{font-size:38px;line-height:1.3;font-weight:800;margin-bottom:6px}
+h2 .emo{margin-right:12px}
+.plain{background:var(--accent-soft);border-radius:18px;padding:14px 22px;font-size:22px;line-height:1.55}
+.plain b{color:var(--accent);margin-right:8px}
+ul.points,ol.points{font-size:23px;line-height:1.55;padding-left:30px;display:flex;flex-direction:column;gap:6px}
+ul.points li::marker{color:var(--accent)}
+ol.points li::marker{color:var(--accent);font-weight:800}
+strong{color:#B4561A}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.col{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:16px 22px}
+.col h3{font-size:21px;color:var(--accent);margin-bottom:8px}
+.col ul{font-size:20px;line-height:1.5;padding-left:24px}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:21px;background:var(--card);border-radius:18px;overflow:hidden;border:2px solid var(--line)}
+th,td{padding:12px 18px;text-align:left;border-bottom:1px solid var(--line);line-height:1.45}
+th{background:var(--accent);color:#fff;font-weight:700}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:700;color:var(--muted);width:150px}
+.quote{background:var(--card);border-left:8px solid var(--accent);border-radius:14px;padding:14px 22px;font-size:20px;line-height:1.6}
+.quote .label{font-size:15px;font-weight:700;color:var(--accent);display:block;margin-bottom:2px}
+.quote .ref{color:var(--muted);font-size:16px;margin-left:6px}
+.calc{background:var(--green-soft);border-radius:14px;padding:12px 20px;font-size:20px;line-height:1.5}
+.calc .label{font-weight:800;color:var(--green);margin-right:8px}
+.todo{background:var(--yellow-soft);border:2px dashed #E3B341;border-radius:14px;padding:10px 18px;font-size:18px}
+.scenario{background:var(--card);border:3px solid var(--accent);border-radius:24px;padding:20px 28px;display:flex;flex-direction:column;gap:12px}
+.scenario .story{font-size:22px;background:var(--accent-soft);border-radius:14px;padding:12px 18px}
+.scenario .story b{color:var(--accent);margin-right:10px}
+.tag-scn{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:4px 14px;font-size:16px;font-weight:700;margin-bottom:6px}
+.cover{justify-content:center}
+.cover .body{justify-content:center;gap:26px}
+.cover .big{font-size:84px}
+.goals{background:var(--card);border-radius:22px;padding:20px 30px;border:2px solid var(--line)}
+.goals h3{font-size:20px;color:var(--accent);margin-bottom:8px}
+.goals ul{font-size:23px;line-height:1.6;padding-left:28px}
+.recap ol{font-size:26px;line-height:1.6;padding-left:34px}
+.points.compact{font-size:20px;gap:2px}.recap.compact{padding:12px 26px}.recap.compact ol{font-size:20px;line-height:1.5}.recap.compact h3{margin-bottom:2px}
+footer.src{position:absolute;left:64px;right:180px;bottom:26px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
+footer.src .pill{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--text)}
+.pageno{position:absolute;right:64px;bottom:26px;font-size:16px;color:var(--muted);font-weight:700}
+.nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;z-index:5}
+.nav button,.nav a{background:var(--text);color:#fff;border:none;border-radius:999px;padding:8px 18px;font-size:15px;cursor:pointer;text-decoration:none;font-family:inherit}
+.nav button:disabled{opacity:.35;cursor:default}
+.progress{position:fixed;top:0;left:0;height:5px;background:var(--accent);transition:width .25s;z-index:5}
+.disclaimer{font-size:15px;color:var(--muted)}
+</style></head><body><div class="progress"></div>
+<div class="viewport"><div class="stage"><section class='slide cover' data-n='1'><div class='body'><div class='kicker'>第 03 章</div><div class='big'>🔧</div><h1>住進去之後，誰該做什麼？</h1><div class='goals'><h3>🎯 這一章你會學到</h3><ul><li>原則由房東修，以及有哪些例外</li><li>房東不修時，房客可以怎麼做</li><li>房客自己要負的責任</li><li>談不攏時：提前終止與調處</li></ul></div></div><footer class='src'><span>📚 出處：</span><span class="pill">修繕責任</span><span class="pill">房客的義務</span><span class="pill">租賃爭議調處</span><span class="pill">提前終止租約</span></footer><div class='pageno'>1 / 7</div></section><section class='slide' data-n='2'><div class='body'><h2><span class=emo>🏠</span>原則：房東修，但有例外</h2><div class='plain'><b>白話</b>房東要讓房子一直維持能住的狀態。</div><ul class='points'><li>房東應交付合於居住使用的房屋，並在租期內<strong>保持可居住狀態</strong>（條例第 8 條）</li><li>房屋或附屬設備損壞<strong>原則由房東修繕</strong>（應記載事項 壹-九；民法第 429 條）</li><li><strong>例外</strong>：雙方另有約定、習慣，或損壞是<strong>可歸責於房客的原因</strong>；由房客負責的項目要在簽約前說明並經你確認，<strong>沒約明確認的，由房東修</strong></li></ul><div class='quote'><span class='label'>📜 原文</span>「但租賃雙方另有約定、習慣或其損壞係可歸責於承租人之事由者，不在此限。」<span class='ref'>（應記載事項 壹-九）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">修繕責任</span></footer><div class='pageno'>2 / 7</div></section><section class='slide' data-n='3'><div class='body'><h2><span class=emo>⏰</span>房東不修怎麼辦？</h2><ul class='points'><li><strong>前提</strong>：屬於房東負責修繕的項目，而且你已定<strong>適當期限</strong></li><li>期限內仍未修繕 → 你可以<strong>自行修繕</strong>，請房東償還費用，或從租金中扣除（條例第 8 條第 3 項）；也可以<strong>提前終止</strong>，條件見本章「談不攏時」那一頁</li><li><strong>房東來修的時候</strong>：應<strong>先期通知</strong>，房客無正當理由不得拒絕；修繕期間導致全部或一部<strong>不能住</strong>，可請求扣除該期間<strong>全部或一部</strong>租金（應記載事項 壹-九）</li></ul><div class='quote'><span class='label'>📜 原文</span>「前項由出租人負責修繕者，如出租人未於承租人所定適當期限內修繕，承租人得自行修繕並請求出租人償還其費用或於約定之租金中扣除。」<span class='ref'>（條例第 8 條第 3 項）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">修繕責任</span></footer><div class='pageno'>3 / 7</div></section><section class='slide' data-n='4'><div class='body'><h2><span class=emo>🧯</span>房客自己要負的責任</h2><ul class='points'><li><strong>小心保管</strong>、照約定方式使用房屋；違反而造成毀損要賠償（正常使用造成的除外）（民法第 432 條）</li><li><strong>同住的人</strong>或你允許使用的人，因應由他們負責的原因造成毀損，<strong>你要負賠償責任</strong>（第 433 條）</li><li>因<strong>重大過失失火</strong>造成毀損，要賠償房東（第 434 條）</li><li>需要<strong>由房東負責的修繕</strong>、為防止危害需要設備、或有第三人主張權利時，要<strong>馬上通知房東</strong>（房東已知者除外）；沒通知導致房東來不及處理，<strong>要賠償損害</strong>（第 437 條）</li><li>因自己的原因不能住，<strong>仍要付租金</strong>（第 441 條）</li></ul><div class='quote'><span class='label'>📜 原文</span>「租賃物因承租人之重大過失，致失火而毀損、滅失者，承租人對於出租人負損害賠償責任。」<span class='ref'>（民法第 434 條）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">房客的義務</span></footer><div class='pageno'>4 / 7</div></section><section class='slide' data-n='5'><div class='body'><div><span class='tag-scn'>🗂 情境卡</span><h2>熱水器壞了兩週，房東都沒處理</h2></div><div class='scenario'><div class='story'><b>情境</b>小華租屋處的熱水器壞了，通知房東兩週都沒處理。</div><ol class='points'><li>確認是否屬於<strong>房東負責</strong>的修繕項目：另有約定、習慣或你造成的損壞除外；簽約前<strong>沒有約明由你修的，由房東修</strong></li><li>向房東提出修繕要求，並<strong>定一個適當期限</strong>（建議留下書面或訊息紀錄）；民法也規定需要由房東負責的修繕時，要<strong>馬上通知房東</strong>（房東已知者除外）</li><li>期限內仍未修繕：可<strong>自行修繕</strong>，請房東償還費用或從租金扣除</li><li>若房屋因此不合居住使用、經你<strong>定期限催告</strong>仍未修，可<strong>提前終止</strong>，並於 30 日前<strong>檢附事證</strong>、書面通知</li><li>有爭議可申請<strong>調處</strong>（免繳調處費用）</li></ol></div><div class='disclaimer'>＊實際以主管機關最新公告為準。</div></div><footer class='src'><span>📚 出處：</span><span class="pill">東西壞了房東不修</span><span class="pill">修繕責任</span><span class="pill">房客的義務</span><span class="pill">提前終止租約</span></footer><div class='pageno'>5 / 7</div></section><section class='slide' data-n='6'><div class='body'><h2><span class=emo>🛟</span>談不攏時：提前終止與調處</h2><div class='cols'><div class='col'><h3>提前終止租約</h3><ul><li>房屋未合於居住使用、有修繕必要</li><li>經你<strong>定期限催告</strong>，房東仍未在期限內修繕</li><li>→ 可提前終止，房東不得要求賠償</li><li>須於終止前 <strong>30 日</strong>，<strong>檢附事證</strong>，<strong>書面</strong>通知房東</li></ul></div><div class='col'><h3>租賃爭議調處</h3><ul><li>向直轄市或縣（市）政府申請</li><li><strong>免繳</strong>調處費用</li><li>出租人、承租人都可以申請</li></ul></div></div><div class='quote'><span class='label'>📜 原文</span>「住宅租賃爭議，出租人或承租人得向直轄市或縣（市）政府申請調處，並免繳調處費用。」<span class='ref'>（條例第 16 條）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">提前終止租約</span><span class="pill">租賃爭議調處</span><span class="pill">東西壞了房東不修</span><span class="pill">租約還沒到期想搬走</span></footer><div class='pageno'>6 / 7</div></section><section class='slide' data-n='7'><div class='body'><h2><span class='emo'>📝</span>第 03 章回顧</h2><div class='goals recap'><h3>本章重點</h3><ol><li>原則<strong>房東修</strong>；例外是另有約定（須事先約明確認）、習慣或可歸責於房客的損壞</li><li>房東負責的項目，定期限後仍不修 → 可<strong>自修請款或扣租</strong>，或依規定<strong>提前終止</strong></li><li>房客要<strong>小心保管</strong>、房東該修的要<strong>馬上通知</strong>；同住者或你允許使用的人因應由他們負責的原因造成毀損、重大過失失火，都要賠償</li></ol></div><div class='disclaimer'>＊本簡報僅供學習，實際以主管機關最新公告為準。</div></div><footer class='src'><span>📚 出處：</span><span class="pill">修繕責任</span><span class="pill">房客的義務</span><span class="pill">提前終止租約</span></footer><div class='pageno'>7 / 7</div></section></div></div>
+<div class="nav"><a href="index.html">🏠 目錄</a><button id="prev">← 上一頁</button><button id="next">下一頁 →</button></div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];let i=0;
+const prev=document.getElementById('prev'),next=document.getElementById('next'),bar=document.querySelector('.progress');
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+ prev.disabled=i===0;next.disabled=i===slides.length-1;bar.style.width=((i+1)/slides.length*100)+'%';history.replaceState(null,'','#'+(i+1));}
+function fit(){const s=Math.min((innerWidth-24)/1280,(innerHeight-88)/720);document.querySelector('.stage').style.transform='scale('+s+')';}
+prev.onclick=()=>show(i-1);next.onclick=()=>show(i+1);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1)}});
+addEventListener('resize',fit);fit();show((parseInt(location.hash.slice(1))||1)-1);
+</script></body></html>

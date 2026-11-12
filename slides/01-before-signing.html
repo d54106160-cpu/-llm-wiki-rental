@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>第 01 章｜簽約前：看懂租約</title>
+<style>
+:root{--bg:#FBF6EE;--card:#FFFFFF;--accent:#E8833A;--accent-soft:#FCE6D4;--text:#3B2F2A;--muted:#7A6A60;--line:#EADFD2;--green:#3E7C59;--green-soft:#E3F1E8;--yellow-soft:#FFF4D6}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#EFE6D8;color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
+.viewport{position:fixed;inset:0 0 64px 0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.stage{width:1280px;height:720px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;background:var(--bg);border-radius:28px;box-shadow:0 12px 40px rgba(59,47,42,.18);padding:48px 64px 84px;display:none;flex-direction:column;overflow:hidden}
+.slide.active{display:flex}
+.slide .body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:18px}
+.kicker{font-size:18px;color:var(--accent);font-weight:700;letter-spacing:.05em}
+h1{font-size:46px;line-height:1.25;font-weight:800}
+h2{font-size:38px;line-height:1.3;font-weight:800;margin-bottom:6px}
+h2 .emo{margin-right:12px}
+.plain{background:var(--accent-soft);border-radius:18px;padding:14px 22px;font-size:22px;line-height:1.55}
+.plain b{color:var(--accent);margin-right:8px}
+ul.points,ol.points{font-size:23px;line-height:1.55;padding-left:30px;display:flex;flex-direction:column;gap:6px}
+ul.points li::marker{color:var(--accent)}
+ol.points li::marker{color:var(--accent);font-weight:800}
+strong{color:#B4561A}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.col{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:16px 22px}
+.col h3{font-size:21px;color:var(--accent);margin-bottom:8px}
+.col ul{font-size:20px;line-height:1.5;padding-left:24px}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:21px;background:var(--card);border-radius:18px;overflow:hidden;border:2px solid var(--line)}
+th,td{padding:12px 18px;text-align:left;border-bottom:1px solid var(--line);line-height:1.45}
+th{background:var(--accent);color:#fff;font-weight:700}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:700;color:var(--muted);width:150px}
+.quote{background:var(--card);border-left:8px solid var(--accent);border-radius:14px;padding:14px 22px;font-size:20px;line-height:1.6}
+.quote .label{font-size:15px;font-weight:700;color:var(--accent);display:block;margin-bottom:2px}
+.quote .ref{color:var(--muted);font-size:16px;margin-left:6px}
+.calc{background:var(--green-soft);border-radius:14px;padding:12px 20px;font-size:20px;line-height:1.5}
+.calc .label{font-weight:800;color:var(--green);margin-right:8px}
+.todo{background:var(--yellow-soft);border:2px dashed #E3B341;border-radius:14px;padding:10px 18px;font-size:18px}
+.scenario{background:var(--card);border:3px solid var(--accent);border-radius:24px;padding:20px 28px;display:flex;flex-direction:column;gap:12px}
+.scenario .story{font-size:22px;background:var(--accent-soft);border-radius:14px;padding:12px 18px}
+.scenario .story b{color:var(--accent);margin-right:10px}
+.tag-scn{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:4px 14px;font-size:16px;font-weight:700;margin-bottom:6px}
+.cover{justify-content:center}
+.cover .body{justify-content:center;gap:26px}
+.cover .big{font-size:84px}
+.goals{background:var(--card);border-radius:22px;padding:20px 30px;border:2px solid var(--line)}
+.goals h3{font-size:20px;color:var(--accent);margin-bottom:8px}
+.goals ul{font-size:23px;line-height:1.6;padding-left:28px}
+.recap ol{font-size:26px;line-height:1.6;padding-left:34px}
+.points.compact{font-size:20px;gap:2px}.recap.compact{padding:12px 26px}.recap.compact ol{font-size:20px;line-height:1.5}.recap.compact h3{margin-bottom:2px}
+footer.src{position:absolute;left:64px;right:180px;bottom:26px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
+footer.src .pill{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--text)}
+.pageno{position:absolute;right:64px;bottom:26px;font-size:16px;color:var(--muted);font-weight:700}
+.nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;z-index:5}
+.nav button,.nav a{background:var(--text);color:#fff;border:none;border-radius:999px;padding:8px 18px;font-size:15px;cursor:pointer;text-decoration:none;font-family:inherit}
+.nav button:disabled{opacity:.35;cursor:default}
+.progress{position:fixed;top:0;left:0;height:5px;background:var(--accent);transition:width .25s;z-index:5}
+.disclaimer{font-size:15px;color:var(--muted)}
+</style></head><body><div class="progress"></div>
+<div class="viewport"><div class="stage"><section class='slide cover' data-n='1'><div class='body'><div class='kicker'>第 01 章</div><div class='big'>🖊️</div><h1>簽約前，先停一下</h1><div class='goals'><h3>🎯 這一章你會學到</h3><ul><li>契約可以帶回審閱至少 3 日</li><li>分清楚租屋型態與租賃範圍</li><li>確認房東是屋主還是二房東</li><li>修繕分工、不得記載的條款，簽約前就要看懂</li></ul></div></div><footer class='src'><span>📚 出處：</span><span class="pill">契約審閱期</span><span class="pill">租屋型態</span><span class="pill">跟二房東租房</span><span class="pill">不得記載事項</span><span class="pill">修繕責任</span></footer><div class='pageno'>1 / 8</div></section><section class='slide' data-n='2'><div class='body'><h2><span class=emo>📄</span>契約可以帶回家審閱</h2><div class='plain'><b>白話</b>簽約前你可以把契約帶回去審閱至少 3 天；契約裡不能寫「房客放棄審閱期」這種條款。</div><ul class='points'><li>審閱期間<strong>至少 3 日</strong>（應記載事項 壹-一）</li><li>契約<strong>不得記載</strong>拋棄審閱期間（貳-一）</li><li>範本注意事項：<strong>房東為企業經營者</strong>、以定型化契約訂約卻<strong>沒提供審閱期</strong>時，條款不構成契約內容，但房客可以主張仍構成</li></ul><div class='quote'><span class='label'>📜 原文</span>「出租人與承租人訂立定型化契約未提供第一項之契約審閱期間者，其條款不構成契約之內容。但承租人得主張該條款仍構成契約之內容。」<span class='ref'>（範本注意事項二）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">契約審閱期</span></footer><div class='pageno'>2 / 8</div></section><section class='slide' data-n='3'><div class='body'><h2><span class=emo>🏘️</span>先搞清楚：你租的是什麼？</h2><table><tr><th>型態</th><th>簡單說</th></tr><tr><td>整戶（層）</td><td>一個門牌的整棟或整層，有多間房</td></tr><tr><td>獨立套房</td><td>有獨立權狀，或有獨立出入口且單獨門牌；只有 1 房（1 廳）1 衛</td></tr><tr><td>分租套房</td><td>無獨立權狀，或同一戶隔間出租、無獨立門牌；房內<strong>有</strong>獨立衛浴</td></tr><tr><td>分租雅房</td><td>同上，但房內<strong>沒有</strong>獨立衛浴</td></tr></table><ul class='points'><li>以上定義來自<strong>租金補貼申請書</strong>的填表說明</li><li>只租一部分（如套房、雅房）時，範本注意事項說明應由出租人出具<strong>位置格局示意圖</strong>，標註租賃範圍</li></ul></div><footer class='src'><span>📚 出處：</span><span class="pill">租屋型態</span></footer><div class='pageno'>3 / 8</div></section><section class='slide' data-n='4'><div class='body'><h2><span class=emo>🔑</span>房東是屋主，還是二房東？</h2><ul class='points'><li>可要求出租人提示<strong>所有權狀、登記謄本</strong>或<strong>原租賃契約書</strong>，並注意原租約有無禁止轉租（範本注意事項二十）</li><li>出租人是轉租人（二房東）時，應提示<strong>原所有權人同意轉租</strong>的證明文件（範本立約人欄）</li><li>轉租須經出租人<strong>書面同意</strong>，轉租人應向次承租人提供同意文件（條例第 9 條）</li><li>沒有書面同意就轉租，<strong>屋主可以對二房東提前終止租約</strong></li></ul><div class='quote'><span class='label'>📜 原文</span>「出租人是否為屋主或二房東，可要求出租人提示產權證明如所有權狀、登記謄本或原租賃契約書（應注意其租賃期間有無禁止轉租之約定）。」<span class='ref'>（範本注意事項二十(二)）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">跟二房東租房</span><span class="pill">轉租</span></footer><div class='pageno'>4 / 8</div></section><section class='slide' data-n='5'><div class='body'><h2><span class=emo>🔧</span>誰負責修？簽約前先講清楚</h2><div class='cols'><div class='col'><h3>法律（條例第 8 條）</h3><ul><li>房東簽約前要說明<strong>由房東負責</strong>修繕的項目及範圍</li><li>並提供需要修繕時的聯絡方式</li></ul></div><div class='col'><h3>契約規範（應記載事項 壹-九、十一）</h3><ul><li><strong>原則由房東修繕</strong>；例外：另有約定、習慣，或損壞是<strong>可歸責於你的原因</strong>（例如你弄壞的）</li><li>房客負責的項目要先說明並經你確認；<strong>沒約明確認的，由房東修</strong></li></ul></div></div><div class='quote'><span class='label'>📜 原文</span>「出租人應於簽訂租賃契約前，向承租人說明由出租人負責修繕項目及範圍，並提供有修繕必要時之聯絡方式。」<span class='ref'>（條例第 8 條第 2 項）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">修繕責任</span></footer><div class='pageno'>5 / 8</div></section><section class='slide' data-n='6'><div class='body'><h2><span class=emo>🚫</span>契約不能寫的條款</h2><ul class='points'><li>例如：「廣告僅供參考」「承租人不得遷入戶籍」「承租人不得申請租金補貼」「通知僅以電話方式為之」（應記載事項 貳）；廣告及附件視為契約的一部分（壹-二十二）</li><li>範本注意事項：如有簽訂這些條款，<strong>該條款無效</strong>（注意事項二十二）</li><li>條例第 5 條：租屋關係視為消費關係，適用消保法相關規定；範本約定條款有疑義時，做<strong>有利於房客</strong>的解釋（範本第二十條）</li><li>例外：把房子<strong>轉租出去的人</strong>，就該段轉租關係無消保法之適用（範本注意事項九(三)）</li></ul><div class='quote'><span class='label'>📜 原文</span>「租賃雙方不得簽訂下列契約條款。如有簽訂者，該條款無效」<span class='ref'>（範本注意事項二十二）</span></div></div><footer class='src'><span>📚 出處：</span><span class="pill">不得記載事項</span><span class="pill">消費者保護與條款疑義</span></footer><div class='pageno'>6 / 8</div></section><section class='slide' data-n='7'><div class='body'><div><span class='tag-scn'>🗂 情境卡</span><h2>「今天就簽吧？」簽約前的檢查清單</h2></div><div class='scenario'><div class='story'><b>情境</b>小安找到喜歡的套房，房東說「今天就簽吧」。</div><ol class='points'><li><strong>適用範圍</strong>：租期未達 30 日、供休閒旅遊、政府或其專責法人經營、合作社經營的租屋，不適用租賃條例</li><li><strong>審閱期</strong>至少 3 日；核對<strong>房東身分</strong>、確認是<strong>屋主還是二房東</strong></li><li><strong>押金</strong>不超過 2 個月租金；水電、管理費等<strong>由誰負擔</strong>，約定電費由你付時，依勾選的計費方式有上限（見第 02 章）</li><li><strong>修繕分工</strong>、<strong>提前解約</strong>（契約勾「得」或「不得」任意終止）、有沒有<strong>不得記載</strong>的條款</li><li><strong>現況確認書</strong>：違建、住宅用火災警報器、滲漏水及處理方式；只租一部分要有位置格局示意圖</li><li><strong>契約分存</strong>：一式二份各留正本；超過二頁宜加蓋騎縫章；塗改處要簽名或蓋章</li></ol></div><div class='disclaimer'>＊實際以主管機關最新公告為準。</div></div><footer class='src'><span>📚 出處：</span><span class="pill">第一次簽約要確認什麼</span></footer><div class='pageno'>7 / 8</div></section><section class='slide' data-n='8'><div class='body'><h2><span class='emo'>📝</span>第 01 章回顧</h2><div class='goals recap'><h3>本章重點</h3><ol><li>契約可帶回審閱<strong>至少 3 日</strong>；先弄清楚租的型態與範圍</li><li>確認<strong>屋主還是二房東</strong>；二房東要有屋主的書面同意</li><li>修繕分工先講清楚；<strong>不得記載</strong>的條款，依範本注意事項，寫了該條款無效</li></ol></div><div class='disclaimer'>＊本簡報僅供學習，實際以主管機關最新公告為準。</div></div><footer class='src'><span>📚 出處：</span><span class="pill">契約審閱期</span><span class="pill">租屋型態</span><span class="pill">跟二房東租房</span><span class="pill">修繕責任</span><span class="pill">不得記載事項</span></footer><div class='pageno'>8 / 8</div></section></div></div>
+<div class="nav"><a href="index.html">🏠 目錄</a><button id="prev">← 上一頁</button><button id="next">下一頁 →</button></div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];let i=0;
+const prev=document.getElementById('prev'),next=document.getElementById('next'),bar=document.querySelector('.progress');
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+ prev.disabled=i===0;next.disabled=i===slides.length-1;bar.style.width=((i+1)/slides.length*100)+'%';history.replaceState(null,'','#'+(i+1));}
+function fit(){const s=Math.min((innerWidth-24)/1280,(innerHeight-88)/720);document.querySelector('.stage').style.transform='scale('+s+')';}
+prev.onclick=()=>show(i-1);next.onclick=()=>show(i+1);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1)}});
+addEventListener('resize',fit);fit();show((parseInt(location.hash.slice(1))||1)-1);
+</script></body></html>
