@@ -8,7 +8,7 @@
 
 | 想看什麼 | 從哪裡開始 |
 |---|---|
-| 教學簡報 | `slides/index.html`（下載後用瀏覽器開啟；或 GitHub Pages：`https://<帳號>.github.io/<repo>/slides/`） |
+| 教學簡報 | `slides/index.html`（下載後用瀏覽器開啟；或 GitHub Pages：`https://d54106160-cpu.github.io/-llm-wiki-rental/`） |
 | Wiki 目錄 | [`wiki/index.md`](wiki/index.md) |
 | 執行日誌 | [`wiki/log.md`](wiki/log.md)：每次 ingest、lint、審查、workflow 修改的紀錄 |
 | 規則檔 | [`AGENTS.md`](AGENTS.md)：Wiki 結構、ingest／lint／簡報流程與使用者決定 |
